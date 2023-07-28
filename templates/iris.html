@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<style>
+    .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+		padding-bottom:10px;
+		border-radius: 15px;
+}
+.card{
+      background-color: rgb(0, 255, 255);
+      align-items: center;
+      justify-content: center;
+      margin: 5rem;
+      
+}
+
+    h1{
+      text-align: center;
+    }
+</style>
+<body>
+  <div class="card" >
+    <div class="card-body">
+      <h1>IRIS Flower Classification<span class="text-success"></span></h1>
+   
+   <class class = "container my-5 mt-5">
+  
+    <form method="POST" action="{{ url_for('predict') }}" class="mt-5">
+    <div class="row">
+      <div class="col-md-6">
+        <label for="Sepal Length">Sepal Length</label>
+        <input type="number" id="Sepal Length" name="Sepal Length" placeholder="Enter Sepal Length" class="form-control" required>
+      </div>
+      
+        <div class="col-md-6">
+          <label for="Sepal Width">Sepal Width</label>
+          <input type="number" id="Sepal Width" name="Sepal Width" placeholder="Enter Sepal Width" class="form-control" required>
+        </div>
+        </div>
+        <br>
+      <div class = "row">
+        <div class="col-md-6">
+          <label for="Petal Length">Petal Length</label>
+          <input type="number" id="Petal Length" name="Petal Length" placeholder="Enter Petal Length" class="form-control" required>
+        </div>
+        <div class="col-md-6">
+          <label for="Petal Width">Petal Width</label>
+          <input type="number" id="Petal Width" name="Petal Width" placeholder="Enter Petal Width" class="form-control" required>
+        </div>
+      </div>
+      <br>
+      <div class = "row">
+        <div class="col-md-12 text-center">
+          <button type="submit" class="btn btn-info btn-lg">Classify</button>
+        </div>
+    
+ </div>
+          </form>
+    <div class="card bg-secondary" style="width: 18rem;">
+		  <!-- <img src="{{url_for('static', filename='img.jpg')}}" class="card-img-top" alt="..."> -->
+		  <div class="card-body">
+			<h5 class="card-title">Flower Belongs to</h5>
+			<p class="card-text">{{prediction }}</p>
+		  </div>
+		</div>
+   </div>
+
+  </div>
+    </div>
+  </div>
+  
+
+
+
+</body>
+</html>
